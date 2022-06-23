@@ -1,7 +1,14 @@
-steps:
-- uses: actions/checkout@v3
-- uses: actions/setup-node@v3
-  with:
-    node-version: 16
-- run: npm i staticrypt
-- run: staticrypt index.html password123
+name: StatiCrypt
+on: [push]
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    name: Build and test
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - run: npm i staticrypt
+    - run: staticrypt index.html password123
+
