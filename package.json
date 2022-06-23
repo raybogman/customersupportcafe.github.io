@@ -1,0 +1,17 @@
+{
+  "name": "customersupportcafe",
+  "version": "1.0.0",
+  "description": "customersupportcafe",
+  "scripts": {
+    "start": "node staticrypt index.html password123 "
+  },
+  "keywords": [],
+  "author": "Ray Bogman <hello@raybogman.com>",
+  "license": "MIT",
+  "dependencies": {
+    "staticrypt": "^2.1.1"
+  },
+  "engines": {
+  "node": ">=16.x"
+  }
+}
