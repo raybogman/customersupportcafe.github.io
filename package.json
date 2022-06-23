@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "customersupportcafe",
   "scripts": {
-    "start": "npx staticrypt index.html password123 "
+    "start": "npx staticrypt _site/index.html password123 "
   },
   "keywords": [],
   "author": "Ray Bogman <hello@raybogman.com>",
