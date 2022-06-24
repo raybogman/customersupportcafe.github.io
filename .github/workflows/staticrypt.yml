@@ -14,20 +14,13 @@ jobs:
       
       - name: Build Site
         uses: ealenn/jekyll-build-action@v1
-      - run: cat _site/index.html
-      - run: pwd
       
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm i staticrypt
-      - run: cd _site
-      - run: ls -la
-      - run: npx staticrypt ${{ github.workspace }}/_site/index.html password123 -o ${{ github.workspace }}
-      - run: cat index.html
-      - run: pwd
-      - run: npm start
+      - run: npx staticrypt ${{ github.workspace }}/_site/index.html password123 -o ${{ github.workspace }}/
 
 
 
