@@ -15,6 +15,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm i staticrypt
+      - run: ls -la
+      - run: pwd
+      - run: ll
+      - run: ls
       - run: npm start
 
 
