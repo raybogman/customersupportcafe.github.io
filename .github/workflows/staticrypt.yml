@@ -1,4 +1,4 @@
-name: StatiCrypt
+name: Jekyll Build + StatiCrypt
 on: [push]
 jobs:
   build-and-test:
@@ -9,12 +9,12 @@ jobs:
         node-version: [16.x]
 
     steps:
-      - name: Checkout
+      - name: Checkout Site
         uses: actions/checkout@v3
       
-      - name: Build
+      - name: Build Site
         uses: ealenn/jekyll-build-action@v1
-      - run: ls -la
+      - run: cat _site/index.html
       - run: pwd
       
       - name: Use Node.js ${{ matrix.node-version }}
