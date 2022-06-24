@@ -22,7 +22,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm i staticrypt
+      - run: npx staticrypt _site/index.html password123
+      - run: cd _site
       - run: ls -la
+      - run: cat index.html
       - run: pwd
       - run: npm start
 
