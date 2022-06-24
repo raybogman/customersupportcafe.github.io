@@ -24,7 +24,7 @@ jobs:
       - run: npm i staticrypt
       - run: cd _site
       - run: ls -la
-      - run: npx staticrypt -c false ${{ github.workspace }}/ ${{ github.workspace }}/_site/index.html password123
+      - run: npx staticrypt ${{ github.workspace }}/ ${{ github.workspace }}/_site/index.html password123 -c false
       - run: cat index.html
       - run: pwd
       - run: npm start
