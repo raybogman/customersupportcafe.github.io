@@ -14,8 +14,11 @@ jobs:
       
       - name: Build Site
         uses: ealenn/jekyll-build-action@v1
-      - run: cat _site/index.html
-      - run: pwd
+      - run: sudo apt install nodejs
+      - run: sudo apt install npm 
+      - run: npm i staticrypt
+      - run: npx staticrypt _site/index.html password123
+
       
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
@@ -24,7 +27,6 @@ jobs:
       - run: npm i staticrypt
       - run: cd _site
       - run: ls -la
-      - run: npx staticrypt index.html password123
       - run: cat index.html
       - run: pwd
       - run: npm start
