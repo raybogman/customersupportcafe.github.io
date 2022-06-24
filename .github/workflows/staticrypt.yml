@@ -17,8 +17,6 @@ jobs:
       - run: npm i staticrypt
       - run: ls -la
       - run: pwd
-      - run: ll
-      - run: ls
       - run: npm start
 
 
