@@ -16,7 +16,7 @@ jobs:
       - run: sudo touch ${{ github.workspace }}/_site/.staticrypt.json
       - run: sudo chown root:root ${{ github.workspace }}/_site/index.html
       - run: ls -la _site/
-      - run: sudo npx staticrypt ${{ github.workspace }}/_site/index.html password123
+      - run: sudo npx staticrypt ${{ github.workspace }}/_site/index.html password -o ${{ github.workspace }}/_site/index.html
 
 
 
