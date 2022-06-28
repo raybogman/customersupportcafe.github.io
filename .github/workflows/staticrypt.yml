@@ -15,8 +15,9 @@ jobs:
       - run: sudo npm install -g staticrypt
       - run: sudo touch ${{ github.workspace }}/_site/.staticrypt.json
       - run: sudo chown runneradmin:runneradmin ${{ github.workspace }}/_site/.staticrypt.json
+      - run: sudo echo "test" > ${{ github.workspace }}/_site/test.html
       - run: ls -la _site/
-      - run: staticrypt ${{ github.workspace }}/_site/index.html MY_PASSPHRASE -o ${{ github.workspace }}/_site/index.html
+      - run: staticrypt ${{ github.workspace }}/_site/test.html MY_PASSPHRASE -o ${{ github.workspace }}/_site/test.html
 
 
 
