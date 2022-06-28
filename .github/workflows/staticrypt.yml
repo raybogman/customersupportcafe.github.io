@@ -4,9 +4,6 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     name: Build and test
-    strategy:
-      matrix:
-        node-version: [16.x]
 
     steps:
       - name: Checkout Site
@@ -14,13 +11,11 @@ jobs:
       
       - name: Build Site
         uses: ealenn/jekyll-build-action@v1
-      
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
+      - run: sudo apt install nodejs
       - run: sudo npm install -g staticrypt
       - run: sudo npx staticrypt ${{ github.workspace }}/_site/index.html password123
+
+
 
 
 
