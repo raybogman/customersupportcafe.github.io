@@ -13,8 +13,9 @@ jobs:
         uses: ealenn/jekyll-build-action@v1
       - run: sudo apt install nodejs
       - run: sudo npm install -g staticrypt
-      - run: sudo touch ${{ github.workspace }}/_site/.staticrypt.json:rw
+      - run: sudo touch ${{ github.workspace }}/_site/.staticrypt.json
       - run: ls -la _site/
+      - run: sudo chown root:root ${{ github.workspace }}/_site/index.html
       - run: sudo npx staticrypt ${{ github.workspace }}/_site/index.html password123
 
 
